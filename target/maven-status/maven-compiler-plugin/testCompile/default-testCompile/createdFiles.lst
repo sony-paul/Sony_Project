@@ -1,0 +1,4 @@
+StepDefinitions\OrderStatusPageSteps.class
+StepDefinitions\SignedInHomePageSteps.class
+StepDefinitions\TestRunner.class
+StepDefinitions\LandingPageSteps.class

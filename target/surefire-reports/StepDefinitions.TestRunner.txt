@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------
+Test set: StepDefinitions.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 25.482 s <<< FAILURE! - in StepDefinitions.TestRunner
+runScenario(StepDefinitions.TestRunner)  Time elapsed: 10.46 s  <<< FAILURE!
+org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
+  (Session info: chrome=99.0.4844.51)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'LAPTOP-3J72H35K', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [978cdbd6a7e1c2d16d49e375dcb6c4cf, switchToFrame {id={ELEMENT=07979884-63a5-4f03-a50b-2a13391e46c7, element-6066-11e4-a52e-4f735466cecf=07979884-63a5-4f03-a50b-2a13391e46c7}}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 98.0.4758.80 (7f0488e8ba0d8..., userDataDir: C:\Users\paulo\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62745}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62745/devtoo..., se:cdpVersion: 99.0.4844.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 978cdbd6a7e1c2d16d49e375dcb6c4cf
+
+runScenario(StepDefinitions.TestRunner)  Time elapsed: 10.463 s  <<< FAILURE!
+org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
+  (Session info: chrome=99.0.4844.51)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'LAPTOP-3J72H35K', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [978cdbd6a7e1c2d16d49e375dcb6c4cf, switchToFrame {id={ELEMENT=07979884-63a5-4f03-a50b-2a13391e46c7, element-6066-11e4-a52e-4f735466cecf=07979884-63a5-4f03-a50b-2a13391e46c7}}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 98.0.4758.80 (7f0488e8ba0d8..., userDataDir: C:\Users\paulo\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62745}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62745/devtoo..., se:cdpVersion: 99.0.4844.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 978cdbd6a7e1c2d16d49e375dcb6c4cf
+
+runScenario(StepDefinitions.TestRunner)  Time elapsed: 19.851 s  <<< FAILURE!
+java.lang.NullPointerException
+
