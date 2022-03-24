@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 20, 2022 09:27:48 pm</span></a>
+<a href="#"><span class="badge badge-primary">Mar 24, 2022 04:46:40 pm</span></a>
 </li>
 </ul>
 </div>
@@ -57,6 +57,11 @@
 <span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -66,25 +71,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 20, 2022 09:27:48 pm</h3>
+<h3>Mar 24, 2022 04:46:40 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 20, 2022 09:28:01 pm</h3>
+<h3>Mar 24, 2022 04:48:04 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>2</h3>
 </div></div>
 </div>
 </div>
@@ -100,12 +105,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='100%'><b>2</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -123,9 +128,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='75%'><b>9</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='25%'><b>3</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -143,10 +148,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> steps passed</small></div>
+<div><small data-tooltip='80%'><b>21</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='11%'><b>3</b> steps failed,
+<b>2</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -162,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"to test api feature":10.383
+"to test api feature":19.403,"Title of your feature":63.106
 };
 </script>
 <div class="row">
@@ -172,12 +177,28 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@api</td>
+<td>@authenticateapi</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100%</td>
+</tr>
+<tr>
+<td>@multiapi</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@api</td>
+<td>9</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>90%</td>
 </tr>
 <tr>
 <td>@deckofcardsapi</td>
@@ -196,21 +217,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 2,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
-failChild: 0,
+passChild: 9,
+failChild: 3,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 1,
-failGrandChild: 0,
+passGrandChild: 21,
+failGrandChild: 3,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 2,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -224,7 +245,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -232,31 +253,31 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@api</a><a class="dropdown-item" href="#">@deckofcardsapi</a>
+<a class="dropdown-item" href="#">@authenticateapi</a><a class="dropdown-item" href="#">@multiapi</a><a class="dropdown-item" href="#">@api</a><a class="dropdown-item" href="#">@deckofcardsapi</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">to test api feature</p>
             <p class="text-sm">
-              <span>9:27:50 pm</span> / <span>00:00:10:383</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>4:46:42 pm</span> / <span>00:00:19:403</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">to test api feature</h5>
-<span class='badge badge-success'>03.20.2022 9:27:50 pm</span>
-<span class='badge badge-danger'>03.20.2022 9:28:01 pm</span>
-<span class='badge badge-default'>00:00:10:383</span>
+<h5 class="test-status text-fail">to test api feature</h5>
+<span class='badge badge-success'>03.24.2022 4:46:42 pm</span>
+<span class='badge badge-danger'>03.24.2022 4:47:01 pm</span>
+<span class='badge badge-default'>00:00:19:403</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -268,13 +289,340 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>deck of cards api testing</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>api testing</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.APIrequestSteps.i_enter_auth_details()">
+                <span>Given I enter auth details</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="6"><span class="badge log fail-bg mr-2">Fail</span>api testing</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.APIrequestSteps.i_launch_the_url()">
+                <span>Given I launch the url</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="StepDefinitions.APIrequestSteps.i_can_validate_response()">
+                <span>Then I can validate response</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "io.restassured.response.Response.getStatusCode()" because "this.response" is null
+	at StepDefinitions.APIrequestSteps.i_can_validate_response(APIrequestSteps.java:65)
+	at ?.I can validate response(file:///C:/Users/paulo/EclipseProjects/APICucumberJavaPOMTestNG/src/test/resources/Features/api.feature:12)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>StepDefinitions.LandingPageSteps.TearDown(io.cucumber.java.Scenario)</span>
+      <div>22a9b35f-44ea-4c88-81c3-2bdffd3f7892
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded1.png' src="../embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>POST api testing</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.APIrequestSteps.i_provide_a_post_request()">
+                <span>Given I provide a post request</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>PUT api testing</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.APIrequestSteps.i_provide_a_put_request()">
+                <span>Given I provide a put request</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="19"><span class="badge log pass-bg mr-2">Pass</span>PATCH api testing</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.APIrequestSteps.i_provide_a_patch_request()">
+                <span>Given I provide a patch request</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="23"><span class="badge log pass-bg mr-2">Pass</span>DELETE api testing</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.APIrequestSteps.i_provide_a_delete_request()">
+                <span>Given I provide a delete request</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="27"><span class="badge log pass-bg mr-2">Pass</span>POST api testing with multi users</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="28"><span class="badge log pass-bg mr-2">Pass</span>POST api testing with multi users</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given I enter"<user>"and"<pwd>"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="32"><span class="badge log pass-bg mr-2">Pass</span>POST api testing with multi users</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given I enter"<user>"and"<pwd>"</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="36"><span class="badge log pass-bg mr-2">Pass</span>deck of cards api testing</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
               <div class="step pass-bg" title="StepDefinitions.APIrequestSteps.a_post_request_payload_check()">
                 <span>And a POST request payload check</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="40"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Title of your feature</p>
+            <p class="text-sm">
+              <span>4:47:01 pm</span> / <span>00:01:03:106</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Title of your feature</h5>
+<span class='badge badge-success'>03.24.2022 4:47:01 pm</span>
+<span class='badge badge-danger'>03.24.2022 4:48:04 pm</span>
+<span class='badge badge-default'>00:01:03:106</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> I want to use this template for my feature file</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="41"><span class="badge log fail-bg mr-2">Fail</span>verify title of the Landing page</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.LandingPageSteps.user_is_in_landing_page()">
+                <span>Given user is in Landing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="StepDefinitions.LandingPageSteps.the_title_of_the_page_will_be_correct()">
+                <span>Then the title of the page will be correct</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<Order Status[1]> but was:<Order Status[]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at StepDefinitions.LandingPageSteps.the_title_of_the_page_will_be_correct(LandingPageSteps.java:76)
+	at ?.the title of the page will be correct(file:///C:/Users/paulo/EclipseProjects/APICucumberJavaPOMTestNG/src/test/resources/Features/gfswebsite.feature:6)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LandingPageSteps.clicks_on_the_sign_in()">
+                <span>When clicks on the sign in</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.LandingPageSteps.user_sign_in_will_be_a_success()">
+                <span>Then user sign in will be a success</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>StepDefinitions.LandingPageSteps.TearDown(io.cucumber.java.Scenario)</span>
+      <div>0ef9a2f3-cd86-4981-8245-a23bd2c0f4bc
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded2.png' src="../embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="48"><span class="badge log fail-bg mr-2">Fail</span>Verify Signed in Home Page</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.LandingPageSteps.user_is_in_landing_page()">
+                <span>Given user is in Landing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.LandingPageSteps.clicks_on_the_sign_in()">
+                <span>When clicks on the sign in</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="StepDefinitions.SignedInHomePageSteps.user_is_in_landing_page()">
+                <span>Then user is in signedinhome page</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[Manage Your Account]> but was:<[]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at StepDefinitions.SignedInHomePageSteps.user_is_in_landing_page(SignedInHomePageSteps.java:29)
+	at ?.user is in signedinhome page(file:///C:/Users/paulo/EclipseProjects/APICucumberJavaPOMTestNG/src/test/resources/Features/gfswebsite.feature:13)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>StepDefinitions.LandingPageSteps.TearDown(io.cucumber.java.Scenario)</span>
+      <div>e96ffc61-3651-4fe0-94aa-f342914a1e85
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded3.png' src="../embedded3.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="54"><span class="badge log pass-bg mr-2">Pass</span>Verify OrderStatus Page</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.LandingPageSteps.user_is_in_landing_page()">
+                <span>Given user is in Landing page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.LandingPageSteps.clicks_on_the_sign_in()">
+                <span>When clicks on the sign in</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.SignedInHomePageSteps.he_clicks_on_the_order_status_link()">
+                <span>When he clicks on the order status link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.OrderStatusPageSteps.clicks_on_the_sign_in_again()">
+                <span>When clicks on the sign in again</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.OrderStatusPageSteps.he_clicks_on_the_items_tab()">
+                <span>When he clicks on the items tab</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.OrderStatusPageSteps.he_will_get_all_items()">
+                <span>Then he will get all items</span>
       <div>
       </div>
               </div>
@@ -297,7 +645,7 @@ eventsCount: 5,
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">4</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -306,12 +654,12 @@ eventsCount: 5,
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@api</p>
+<p class="name">@authenticateapi</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@api</h4>
+<h4>@authenticateapi</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -325,9 +673,193 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>21:27:50 pm</td>
+<td>16:46:42 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>deck of cards api testing</a>
+<a href="#" class="linked" test-id='1' id='2'>api testing</a>
+<div class="">
+<span class="badge badge-default">to test api feature.api testing</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">@multiapi</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@multiapi</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:57 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='27'>POST api testing with multi users</a>
+<div class="">
+<span class="badge badge-default">to test api feature.POST api testing with multi users</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:57 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='28'>POST api testing with multi users</a>
+<div class="">
+<span class="badge badge-default">to test api feature.POST api testing with multi users</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:58 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>POST api testing with multi users</a>
+<div class="">
+<span class="badge badge-default">to test api feature.POST api testing with multi users</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>9</span>
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@api</p>
+<p class="duration text-sm">10 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@api</h4>
+<span status="pass" class='badge log pass-bg'>9 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>api testing</a>
+<div class="">
+<span class="badge badge-default">to test api feature.api testing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:46:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='6'>api testing</a>
+<div class="">
+<span class="badge badge-default">to test api feature.api testing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='11'>POST api testing</a>
+<div class="">
+<span class="badge badge-default">to test api feature.POST api testing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>PUT api testing</a>
+<div class="">
+<span class="badge badge-default">to test api feature.PUT api testing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='19'>PATCH api testing</a>
+<div class="">
+<span class="badge badge-default">to test api feature.PATCH api testing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='23'>DELETE api testing</a>
+<div class="">
+<span class="badge badge-default">to test api feature.DELETE api testing</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:57 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='27'>POST api testing with multi users</a>
+<div class="">
+<span class="badge badge-default">to test api feature.POST api testing with multi users</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:57 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='28'>POST api testing with multi users</a>
+<div class="">
+<span class="badge badge-default">to test api feature.POST api testing with multi users</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:58 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='32'>POST api testing with multi users</a>
+<div class="">
+<span class="badge badge-default">to test api feature.POST api testing with multi users</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='36'>deck of cards api testing</a>
 <div class="">
 <span class="badge badge-default">to test api feature.deck of cards api testing</span>
 </div>
@@ -361,11 +893,109 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>21:27:50 pm</td>
+<td>16:47:00 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>deck of cards api testing</a>
+<a href="#" class="linked" test-id='1' id='36'>deck of cards api testing</a>
 <div class="">
 <span class="badge badge-default">to test api feature.deck of cards api testing</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">org.junit.ComparisonFailure</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.junit.ComparisonFailure</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:47:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='40' id='44'>Then the title of the page will be correct</a>
+<div class="">
+<span class="badge badge-default">Title of your feature.verify title of the Landing page.Then the title of the page will be correct</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:47:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='40' id='52'>Then user is in signedinhome page</a>
+<div class="">
+<span class="badge badge-default">Title of your feature.Verify Signed in Home Page.Then user is in signedinhome page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.NullPointerException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.NullPointerException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:46:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='9'>Then I can validate response</a>
+<div class="">
+<span class="badge badge-default">to test api feature.api testing.Then I can validate response</span>
 </div>
 </td>
 </tr>

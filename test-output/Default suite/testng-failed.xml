@@ -6,7 +6,7 @@
       <class name="StepDefinitions.TestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="1 9 10"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- StepDefinitions.TestRunner -->

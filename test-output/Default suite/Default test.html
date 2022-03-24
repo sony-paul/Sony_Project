@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>9/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Mar 20 21:27:48 GMT 2022</td>
+<td>Started on:</td><td>Thu Mar 24 16:46:40 GMT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>17 seconds (17444 ms)</td>
+<tr><td>Total time:</td><td>90 seconds (90661 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,58 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify title of the Landing page", "Optional[Title of your feature]"</td>
+<td><div><pre>org.junit.ComparisonFailure: expected:&lt;Order Status[1]&gt; but was:&lt;Order Status[]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at StepDefinitions.LandingPageSteps.the_title_of_the_page_will_be_correct(LandingPageSteps.java:76)
+	at ?.the title of the page will be correct(file:///C:/Users/paulo/EclipseProjects/APICucumberJavaPOMTestNG/src/test/resources/Features/gfswebsite.feature:6)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1964740634", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1964740634'><pre>org.junit.ComparisonFailure: expected:&lt;Order Status[1]&gt; but was:&lt;Order Status[]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at StepDefinitions.LandingPageSteps.the_title_of_the_page_will_be_correct(LandingPageSteps.java:76)
+	at ?.the title of the page will be correct(file:///C:/Users/paulo/EclipseProjects/APICucumberJavaPOMTestNG/src/test/resources/Features/gfswebsite.feature:6)
+</pre></div></td>
+<td>11</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+<tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Signed in Home Page", "Optional[Title of your feature]"</td>
+<td><div><pre>org.junit.ComparisonFailure: expected:&lt;[Manage Your Account]&gt; but was:&lt;[]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at StepDefinitions.SignedInHomePageSteps.user_is_in_landing_page(SignedInHomePageSteps.java:29)
+	at ?.user is in signedinhome page(file:///C:/Users/paulo/EclipseProjects/APICucumberJavaPOMTestNG/src/test/resources/Features/gfswebsite.feature:13)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1610143599", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1610143599'><pre>org.junit.ComparisonFailure: expected:&lt;[Manage Your Account]&gt; but was:&lt;[]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at StepDefinitions.SignedInHomePageSteps.user_is_in_landing_page(SignedInHomePageSteps.java:29)
+	at ?.user is in signedinhome page(file:///C:/Users/paulo/EclipseProjects/APICucumberJavaPOMTestNG/src/test/resources/Features/gfswebsite.feature:13)
+</pre></div></td>
+<td>16</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+<tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "api testing", "Optional[to test api feature]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;io.restassured.response.Response.getStatusCode()&quot; because &quot;this.response&quot; is null
+	at StepDefinitions.APIrequestSteps.i_can_validate_response(APIrequestSteps.java:65)
+	at ?.I can validate response(file:///C:/Users/paulo/EclipseProjects/APICucumberJavaPOMTestNG/src/test/resources/Features/api.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2064664366", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2064664366'><pre>java.lang.NullPointerException: Cannot invoke &quot;io.restassured.response.Response.getStatusCode()&quot; because &quot;this.response&quot; is null
+	at StepDefinitions.APIrequestSteps.i_can_validate_response(APIrequestSteps.java:65)
+	at ?.I can validate response(file:///C:/Users/paulo/EclipseProjects/APICucumberJavaPOMTestNG/src/test/resources/Features/api.feature:12)
+</pre></div></td>
+<td>3</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,9 +127,49 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "api testing", "Optional[to test api feature]"</td>
+<td></td>
+<td>5</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+<tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "POST api testing with multi users", "Optional[to test api feature]"</td>
+<td></td>
+<td>1</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+<tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "POST api testing with multi users", "Optional[to test api feature]"</td>
+<td></td>
+<td>1</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+<tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PUT api testing", "Optional[to test api feature]"</td>
+<td></td>
+<td>1</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+<tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "POST api testing", "Optional[to test api feature]"</td>
+<td></td>
+<td>2</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+<tr>
 <td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "deck of cards api testing", "Optional[to test api feature]"</td>
 <td></td>
-<td>10</td>
+<td>1</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+<tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "PATCH api testing", "Optional[to test api feature]"</td>
+<td></td>
+<td>1</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+<tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify OrderStatus Page", "Optional[Title of your feature]"</td>
+<td></td>
+<td>35</td>
+<td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
+<tr>
+<td title='StepDefinitions.TestRunner.runScenario()'><b>runScenario</b><br>Test class: StepDefinitions.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "DELETE api testing", "Optional[to test api feature]"</td>
+<td></td>
+<td>1</td>
 <td>StepDefinitions.TestRunner@76b1e9b8</td></tr>
 </table><p>
 </body>

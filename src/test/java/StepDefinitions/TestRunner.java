@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 	features="src/test/resources/Features",
 	glue={"StepDefinitions"},
-	tags= "@deckofcardsapi",
+	//tags= "@deckofcardsapi",
 	monochrome=true,
 	publish = true,
 	dryRun=false,
