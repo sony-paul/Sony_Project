@@ -1,1 +1,21 @@
-*.md
+# Maven / Java
+target/
+*.class
+*.log
+*.jar
+
+# IDE files
+*.iml
+.idea/
+.vscode/
+*.project
+*.classpath
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ChromeDriver / binaries
+chromedriver
+chromedriver.exe
+geckodriver

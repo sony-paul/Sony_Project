@@ -1,6 +1,7 @@
-pages\SignedInHomepage.class
+base\ApiBase.class
+apispec\AuthorsAPI.class
 base\Constants.class
+utils\WaitUtils.class
 base\BaseTest.class
+pages\RevenueCalculatorPage.class
 reports\NewReports.class
-pages\LandingPage.class
-pages\OrderStatusPage.class

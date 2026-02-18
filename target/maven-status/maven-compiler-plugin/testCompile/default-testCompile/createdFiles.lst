@@ -1,4 +1,4 @@
-StepDefinitions\OrderStatusPageSteps.class
-StepDefinitions\SignedInHomePageSteps.class
-StepDefinitions\TestRunner.class
-StepDefinitions\LandingPageSteps.class
+StepDefinitions\RevenueCalculatorSteps.class
+runners\TestApiRunner.class
+StepDefinitions\AuthorAPISteps.class
+runners\TestUiRunner.class

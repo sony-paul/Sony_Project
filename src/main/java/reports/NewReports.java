@@ -28,7 +28,8 @@ public class NewReports extends BaseTest {
 		
 	
 	public static void sendresult(ITestResult result) {
-		
+		test = reports.createTest(result.getName());
+
 		if (result.getStatus() == ITestResult.FAILURE) {
 			test.fail(result.getName());
 			test.fail(result.getThrowable());

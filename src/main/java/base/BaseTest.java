@@ -1,73 +1,71 @@
 package base;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.time.Duration;
-import java.util.Properties;
-
-import org.apache.tools.ant.util.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.ITestResult;
-import org.testng.annotations.Parameters;
-
-import io.cucumber.core.backend.TestCaseState;
-import io.cucumber.java.Scenario;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 
 public class BaseTest {
 
-	protected static WebDriver driver;
-	protected static Properties prop;
-	
-	public BaseTest() {
-		
-		prop=new Properties();
-		try {
-			FileInputStream fip=new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/config.properties");
-			prop.load(fip);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    protected static WebDriver driver;
+    protected static Properties prop;
 
-	}
+    static
+    {
+      try {
+           FileInputStream fip=new FileInputStream("src/main/resources/config.properties");
+            prop=new Properties();
+            prop.load(fip);
+            String ApplicationURL = null;
+            if(System.getenv("ENV")==null)
+            {
+                ApplicationURL=prop.getProperty("URL").replace("###","www");
+            }
+            else
+            {
+                ApplicationURL=prop.getProperty("URL").replace("###",System.getenv("ENV"));
+            }
+            prop.setProperty("URL",ApplicationURL);
+            prop.getProperty("browser");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    };
 
-	
-	public static void initBrowser() {
-		
-	//	String browser="Chrome";
-	//to read from command line
-	//	String browser=System.getProperty("browser");
-	//	to Read from Config file
-		String browser=prop.getProperty("browser");
-		
-		if(browser.equalsIgnoreCase("Chrome"))
-		{
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/resources/chromedriver.exe");
-			driver=new ChromeDriver();
-		}
-		
-		else if (browser.equalsIgnoreCase("IE")) {
-			System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "/src/main/resources/IEDriverServer.exe");
-			driver=new InternetExplorerDriver();
-			
-		}
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Constants.IMPLICITLY_WAIT));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Constants.PAGE_LOAD_TIMEOUT));
+    public void setUp()
+    {
+        if(prop.getProperty("browser").equals("Chrome")) {
+            ChromeOptions options = new ChromeOptions();
+            if (System.getenv("CI") != null) {
+                options.addArguments("--headless");
+                System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+           }
+            driver = new ChromeDriver(options);
+            driver.manage().window().maximize();
+        }
+        else if(prop.getProperty("browser").equals("IE")) {
+            driver = new InternetExplorerDriver();
+        }
+        else if(prop.getProperty("browser").equals("Firefox")) {
+            driver = new FirefoxDriver();
+        }
+        else
+        {
+            throw new IllegalArgumentException("Input browser is invalid");
+        }
+    }
 
 
-	}
-	
-	public void teardown() {
-		
-		driver.quit();
-	}
-
+    public void tearDown()
+    {
+        if (driver!=null)
+        {
+            driver.quit();
+        }
+    }
 
 }
