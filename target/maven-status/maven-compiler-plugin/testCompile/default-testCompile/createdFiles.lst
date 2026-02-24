@@ -1,4 +1,4 @@
-StepDefinitions\RevenueCalculatorSteps.class
-runners\TestApiRunner.class
 StepDefinitions\AuthorAPISteps.class
 runners\TestUiRunner.class
+StepDefinitions\RevenueCalculatorSteps.class
+runners\TestApiRunner.class

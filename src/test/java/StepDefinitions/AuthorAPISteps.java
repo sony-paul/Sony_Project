@@ -15,7 +15,7 @@ import java.util.List;
 public class AuthorAPISteps extends AuthorsAPI {
     private Response response;
 
-    @Test
+
     @Given("the API endpoint for authors is available")
     public void theAPIEndpointForAuthorsIsAvailable() {
         System.out.println("API Base URL: " + ApiBase.prop.getProperty("baseURL"));
